@@ -40,8 +40,10 @@ const PagarPrestamo = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Pagar</button>
-        <button type="button" className="back-button" onClick={handleBack}>Volver al Menú Principal</button>
+        <div className="buttons-group">
+          <button type="submit" className="submit-button">Pagar</button>
+          <button type="button" className="back-button" onClick={handleBack}>Volver al Menú Principal</button>
+        </div>
       </form>
     </div>
   );

@@ -17,6 +17,11 @@ const DetallesSolicitud = () => {
     }
   }, [idSolicitud]);
 
+
+    
+  const handleBack = () => {
+    window.history.back();
+  };
   return (
     <div className="detalles-solicitud-container">
       <h2>Detalles de Solicitud</h2>
@@ -28,7 +33,10 @@ const DetallesSolicitud = () => {
           placeholder="ID Solicitud"
           className="input-id"
         />
+        <div className="buttons-group">    
         <button onClick={fetchDetalles} className="submit-button">Obtener Detalles</button>
+        <button type="button" className="back-button" onClick={handleBack}>Volver al Menú Principal</button>
+        </div>  
       </div>
       {solicitud && (
         <div className="detalles-container">
