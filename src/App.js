@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { initWeb3 } from './contract';
-import SolicitarPrestamo from './components/SolicitarPrestamo';
+import SolicitarPrestamo from './components/SolicitarPrestamo.js';
 import FinanciarPrestamo from './components/FinanciarPrestamo';
 import PagarPrestamo from './components/PagarPrestamo';
 import DetallesSolicitud from './components/DetallesSolicitud';

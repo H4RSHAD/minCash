@@ -108,16 +108,16 @@ const Sidebar = (props) => {
     >
        <ul>
         <li>
-          <Link to="/admin/solicitar-prestamo">Solicitar Préstamo</Link>
+          <Link to="/solicitar-prestamo">Solicitar Préstamo</Link>
         </li>
         <li>
-          <Link to="/admin/financiar-prestamo">Financiar Préstamo</Link>
+          <Link to="/financiar-prestamo">Financiar Préstamo</Link>
         </li>
         <li>
-          <Link to="/admin/pagar-prestamo">Pagar Préstamo</Link>
+          <Link to="/pagar-prestamo">Pagar Préstamo</Link>
         </li>
         <li>
-          <Link to="/admin/detalles-solicitud">Detalles Solicitud</Link>
+          <Link to="/detalles-solicitud">Detalles Solicitud</Link>
         </li>
       </ul>
       <Container fluid>
