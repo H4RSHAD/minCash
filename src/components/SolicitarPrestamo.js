@@ -32,6 +32,10 @@ const SolicitarPrestamo = () => {
     }
   };
 
+  const handleBack = () => {
+    window.history.back();
+  };
+
   return (
     <div className="solicitar-prestamo-container">
       <h2>Solicitar Préstamo</h2>
@@ -64,11 +68,13 @@ const SolicitarPrestamo = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Solicitar</button>
+        <div className="buttons-group">
+          <button type="submit" className="submit-button">Solicitar</button>
+          <button type="button" className="back-button" onClick={handleBack}>Volver al Menú Principal</button>
+        </div>
       </form>
     </div>
   );
 };
 
 export default SolicitarPrestamo;
-
