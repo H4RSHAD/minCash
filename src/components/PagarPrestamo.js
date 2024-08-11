@@ -12,6 +12,12 @@ const PagarPrestamo = () => {
     await contract.methods.pagarPrestamo(idSolicitud).send({ from: accounts[0], value: monto });
   };
 
+
+  const handleBack = () => {
+    window.history.back();
+  };
+
+
   return (
     <div className="pagar-prestamo-container">
       <h2>Pagar Préstamo</h2>
@@ -35,6 +41,7 @@ const PagarPrestamo = () => {
           />
         </div>
         <button type="submit" className="submit-button">Pagar</button>
+        <button type="button" className="back-button" onClick={handleBack}>Volver al Menú Principal</button>
       </form>
     </div>
   );
