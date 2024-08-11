@@ -25,6 +25,10 @@ import "assets/scss/argon-dashboard-react.scss";
 
 import AdminLayout from "layouts/Admin.js";
 import AuthLayout from "layouts/Auth.js";
+import SolicitarPrestamo from './components/SolicitarPrestamo';
+import FinanciarPrestamo from './components/FinanciarPrestamo';
+import PagarPrestamo from './components/PagarPrestamo';
+import DetallesSolicitud from './components/DetallesSolicitud';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -34,6 +38,10 @@ root.render(
       <Route path="/admin/*" element={<AdminLayout />} />
       <Route path="/auth/*" element={<AuthLayout />} />
       <Route path="*" element={<Navigate to="/admin/index" replace />} />
+      <Route path="/solicitar-prestamo" element={<SolicitarPrestamo />} />
+      <Route path="/financiar-prestamo" element={<FinanciarPrestamo />} />
+      <Route path="/pagar-prestamo" element={<PagarPrestamo />} />
+      <Route path="/detalles-solicitud" element={<DetallesSolicitud />} />
     </Routes>
   </BrowserRouter>
 );
