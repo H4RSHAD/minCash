@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { web3, contract } from '../contract';
+import './SolicitarPrestamo.css';
 
 const SolicitarPrestamo = () => {
   const [monto, setMonto] = useState('');
@@ -9,7 +10,6 @@ const SolicitarPrestamo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verificar si web3 está disponible
     if (!web3 || !contract) {
       console.error('web3 o el contrato no están inicializados correctamente');
       alert('Hubo un problema al conectar con la blockchain. Por favor, verifica que Metamask esté instalado y conectado.');
@@ -33,10 +33,10 @@ const SolicitarPrestamo = () => {
   };
 
   return (
-    <div>
+    <div className="solicitar-prestamo-container">
       <h2>Solicitar Préstamo</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="prestamo-form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label>Monto:</label>
           <input
             type="number"
@@ -45,16 +45,17 @@ const SolicitarPrestamo = () => {
             required
           />
         </div>
-        <div>
-          <label>Tasa de Interés:</label>
+        <div className="form-group">
+          <label>Tasa de Interés (%):</label>
           <input
             type="number"
+            step="0.01"
             value={tasaInteres}
             onChange={(e) => setTasaInteres(e.target.value)}
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Plazo (días):</label>
           <input
             type="number"
@@ -63,10 +64,11 @@ const SolicitarPrestamo = () => {
             required
           />
         </div>
-        <button type="submit">Solicitar</button>
+        <button type="submit" className="submit-button">Solicitar</button>
       </form>
     </div>
   );
 };
 
 export default SolicitarPrestamo;
+

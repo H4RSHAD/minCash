@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { web3, contract } from '../contract';
+import './PagarPrestamo.css';
 
 const PagarPrestamo = () => {
   const [idSolicitud, setIdSolicitud] = useState('');
@@ -12,18 +13,28 @@ const PagarPrestamo = () => {
   };
 
   return (
-    <div>
+    <div className="pagar-prestamo-container">
       <h2>Pagar Préstamo</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="prestamo-form" onSubmit={handleSubmit}>
+        <div className="form-group">
           <label>ID Solicitud:</label>
-          <input type="number" value={idSolicitud} onChange={(e) => setIdSolicitud(e.target.value)} required />
+          <input
+            type="number"
+            value={idSolicitud}
+            onChange={(e) => setIdSolicitud(e.target.value)}
+            required
+          />
         </div>
-        <div>
+        <div className="form-group">
           <label>Monto (en ETH/AVAX):</label>
-          <input type="number" value={monto} onChange={(e) => setMonto(e.target.value)} required />
+          <input
+            type="number"
+            value={monto}
+            onChange={(e) => setMonto(e.target.value)}
+            required
+          />
         </div>
-        <button type="submit">Pagar</button>
+        <button type="submit" className="submit-button">Pagar</button>
       </form>
     </div>
   );
